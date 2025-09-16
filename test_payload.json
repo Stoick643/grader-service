@@ -1,0 +1,11 @@
+{
+  "language": "redis",
+  "user_code": "SETEX user:123 60 active",
+  "check_logic": {
+    "validation_command": "TTL user:123",
+    "expected_result": {
+      "type": "exact_match",
+      "value": "60"
+    }
+  }
+}
