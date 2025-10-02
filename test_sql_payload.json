@@ -1,0 +1,11 @@
+{
+  "language": "sql",
+  "user_code": "SELECT COUNT(*) FROM employees WHERE department_id = 1;",
+  "check_logic": {
+    "validation_command": "SELECT COUNT(*) FROM employees WHERE department_id = 1;",
+    "expected_result": {
+      "type": "exact_match",
+      "value": "5"
+    }
+  }
+}

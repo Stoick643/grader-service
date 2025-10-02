@@ -5,7 +5,8 @@ from . import schemas
 
 # Map language names to the Docker images we will build
 GRADER_IMAGES = {
-    "redis": "grader-image-redis"
+    "redis": "grader-image-redis",
+    "sql": "grader-image-sql"
 }
 POOL_SIZE = 3 # Number of warm containers to keep per language
 
@@ -47,6 +48,8 @@ class ContainerManager:
         cli_command = ""
         if language == "redis":
             cli_command = "redis-cli"
+        elif language == "sql":
+            cli_command = "sqlite3 /data/company.db"
 
         # 1. Run setup commands if they exist
         if check_logic.setup_commands:
